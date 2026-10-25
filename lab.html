@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ЛР №4 · Основы JavaScript · Вариант 14 — Дизайнер и визуализатор</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="grain"></div>
+
+  <main class="stage">
+    <header class="masthead">
+      <div class="badge" data-testid="lab-badge">Лабораторная работа №4 · JavaScript</div>
+      <h1 class="title">
+        Дизайнер<span class="amp">&amp;</span>Визуализатор
+      </h1>
+      <p class="subtitle">Вариант 14 — анализ ширины макетов в пикселях: максимум, фильтрация, сумма, доля узких макетов.</p>
+    </header>
+
+    <section class="panel data-panel">
+      <div class="panel-head">
+        <span class="panel-eyebrow">Исходные данные</span>
+        <h2 class="panel-title">Ширина макетов, px</h2>
+      </div>
+      <div class="chips" id="data-chips" data-testid="data-chips"><!-- заполняется из script.js --></div>
+      <p class="hint">Значения можно изменить прямо здесь через кнопку ниже, затем запустить анализ.</p>
+    </section>
+
+    <div class="actions">
+      <button class="btn btn-primary" id="run-btn" data-testid="run-btn">
+        <span class="dot"></span> Запустить анализ
+      </button>
+      <button class="btn btn-ghost" id="edit-btn" data-testid="edit-btn">Изменить данные</button>
+    </div>
+
+    <section class="results" id="results" data-testid="results" hidden>
+      <div class="panel result-card">
+        <span class="metric-label">Средняя ширина</span>
+        <span class="metric-value" id="avg-value" data-testid="avg-value">—</span>
+        <span class="metric-unit">px</span>
+      </div>
+      <div class="panel result-card">
+        <span class="metric-label">Сверхширокие (&gt; 1920px)</span>
+        <span class="metric-value accent" id="wide-value" data-testid="wide-value">—</span>
+        <span class="metric-unit">макетов</span>
+      </div>
+      <div class="panel result-card">
+        <span class="metric-label">Узкие (&le; 1200px)</span>
+        <span class="metric-value" id="narrow-value" data-testid="narrow-value">—</span>
+        <span class="metric-unit">макетов</span>
+      </div>
+      <div class="panel result-card">
+        <span class="metric-label">Доля узких макетов</span>
+        <span class="metric-value" id="share-value" data-testid="share-value">—</span>
+        <span class="metric-unit">%</span>
+      </div>
+      <div class="panel result-card wide">
+        <span class="metric-label">Максимальный макет</span>
+        <span class="metric-value" id="max-value" data-testid="max-value">—</span>
+        <span class="metric-unit">px</span>
+      </div>
+      <div class="panel result-card wide note" id="split-note" data-testid="split-note" hidden></div>
+    </section>
+
+    <section class="panel console-panel">
+      <div class="console-head">
+        <span class="dots"><i></i><i></i><i></i></span>
+        <span class="console-title">console</span>
+      </div>
+      <pre class="console-body" id="console-out" data-testid="console-out">// Нажмите «Запустить анализ» — вывод появится здесь и в DevTools.</pre>
+    </section>
+
+    <footer class="footer">Откройте DevTools (F12) → вкладка Console, чтобы видеть нативный console.log</footer>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
